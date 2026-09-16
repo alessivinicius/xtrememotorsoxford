@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink antialiased;
+}
+
+::selection {
+  @apply bg-accent/30 text-ink;
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.accent.DEFAULT");
+  outline-offset: 2px;
+}
+
+/* Reserve space for the mobile sticky call/WhatsApp bar so content and the
+   footer are never hidden behind it. */
+@media (max-width: 1023px) {
+  main {
+    padding-bottom: 4.25rem;
+  }
+}
