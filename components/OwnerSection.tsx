@@ -16,6 +16,18 @@ export function OwnerSection() {
               sizes="(min-width: 1024px) 40vw, 90vw"
               priority
             />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/70 to-transparent" />
+            <div className="absolute bottom-7 right-7 flex items-stretch gap-3 md:bottom-9 md:right-9">
+              <div className="w-px bg-accent-light" />
+              <div>
+                <p className="font-display text-xl tracking-wide text-paper md:text-2xl">
+                  RICARDO
+                </p>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-widest2 text-paper/70">
+                  Founder
+                </p>
+              </div>
+            </div>
           </div>
 
           <div>
