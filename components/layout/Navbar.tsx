@@ -55,7 +55,7 @@ export function Navbar() {
         <Link
           href="/"
           aria-label="Xtreme Motors — home"
-          className="relative inline-block aspect-[1018/586] h-9 w-auto shrink-0 md:h-11"
+          className="relative inline-block aspect-[1018/586] h-12 w-auto shrink-0 md:h-16"
         >
           <Image
             src="/images/logo-compact.png"
