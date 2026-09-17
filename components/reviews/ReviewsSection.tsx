@@ -10,7 +10,7 @@ export function ReviewsSection() {
       {/* Subtle background texture only — kept low-opacity and under a
           dark scrim so it never competes with the review cards on top. */}
       <video
-        className="absolute inset-0 h-full w-full object-cover opacity-25"
+        className="absolute inset-0 h-full w-full object-cover opacity-50"
         src="/videos/reviews.mp4"
         autoPlay
         muted
@@ -18,7 +18,7 @@ export function ReviewsSection() {
         playsInline
         aria-hidden
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/85 to-ink" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/55 to-ink/75" />
       <Container className="relative">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div>
