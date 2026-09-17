@@ -19,17 +19,25 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+// Only these pages open with a full-bleed dark hero/banner behind the
+// navbar, so only they can safely start transparent. Every other page
+// (contact, sell your car, vehicle detail, legal pages...) opens on a
+// light background and needs the solid navbar from the first frame.
+const DARK_HERO_ROUTES = new Set(["/", "/stock", "/warranty", "/about", "/finance"]);
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const hasDarkHero = DARK_HERO_ROUTES.has(pathname);
 
   useEffect(() => {
+    if (!hasDarkHero) return;
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [hasDarkHero]);
 
   useEffect(() => {
     setOpen(false);
@@ -46,7 +54,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-premium",
-        scrolled || open
+        !hasDarkHero || scrolled || open
           ? "bg-ink/95 backdrop-blur-sm shadow-[0_1px_0_rgba(245,246,250,0.08)]"
           : "bg-transparent"
       )}
