@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Star } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -8,12 +7,16 @@ import { company } from "@/data/company";
 export function ReviewsSection() {
   return (
     <section className="relative overflow-hidden bg-ink py-24 md:py-32">
-      <Image
-        src="/images/reviews-interior.png"
-        alt=""
-        fill
-        className="object-cover opacity-40"
-        sizes="100vw"
+      {/* Subtle background texture only — kept low-opacity and under a
+          dark scrim so it never competes with the review cards on top. */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover opacity-25"
+        src="/videos/reviews.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/85 to-ink" />
       <Container className="relative">
