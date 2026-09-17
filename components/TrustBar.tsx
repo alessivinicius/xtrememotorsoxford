@@ -28,11 +28,11 @@ const items = [
 export function TrustBar() {
   return (
     <section id="trust-bar" className="border-b border-ink/8 bg-paper-white">
-      <Container className="grid grid-cols-2 gap-y-10 py-12 md:grid-cols-4 md:gap-y-0 md:py-14">
+      <Container className="grid grid-cols-2 gap-x-6 gap-y-8 py-8 md:grid-cols-4 md:gap-x-0 md:gap-y-0 md:py-10">
         {items.map((item) => (
           <div
             key={item.title}
-            className="flex flex-col items-start gap-3 pr-6 md:border-ink/8 md:[&:not(:last-child)]:border-r"
+            className="flex flex-col items-start gap-3 md:border-ink/8 md:px-6 md:first:pl-0 md:last:pr-0 md:[&:not(:first-child)]:border-l"
           >
             <item.icon size={22} strokeWidth={1.5} className="text-accent" />
             <div>
